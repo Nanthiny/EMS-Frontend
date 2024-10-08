@@ -102,7 +102,6 @@ export class SalaryDetailsFormComponent
       });
   }
   createOrUpdateEmployeeSalaryDetails() {
-    console.log(this.form.value.departmentId);
     var data: EmployeeSalary = {
       employeeId: Number(this.form.value.employeeId),
       salary: this.form.value.salary,
@@ -115,7 +114,11 @@ export class SalaryDetailsFormComponent
         .subscribe({
           next: (data: any) => {
             if (data !== undefined) {
-              this.showSuccess(data.message);
+              if(data.isSuccess){
+                this.showSuccess(data.message);
+              }else{
+                this.showError(data.message);
+              }
             }
           },
           error: (e) => {
@@ -132,7 +135,11 @@ export class SalaryDetailsFormComponent
         .subscribe({
           next: (data: any) => {
             if (data !== undefined) {
-              this.showSuccess(data.message);
+              if(data.isSuccess){
+                this.showSuccess(data.message);
+              }else{
+                this.showError(data.message);
+              }
             }
           },
           error: (e) => {

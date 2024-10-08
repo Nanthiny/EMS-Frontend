@@ -93,7 +93,7 @@ export class EmployeeFormComponent extends FormTemplate implements OnInit {
       });
   }
   createOrUpdateEmployee() {
-    console.log(this.form.value.departmentId);
+
     var data: Employee = {
       employeeNumber: this.form.value.employeeNumber,
       employeeName: this.form.value.employeeName,
@@ -110,7 +110,11 @@ export class EmployeeFormComponent extends FormTemplate implements OnInit {
         .subscribe({
           next: (data: any) => {
             if (data !== undefined) {
-              this.showSuccess(data.message);
+              if(data.isSuccess){
+                this.showSuccess(data.message);
+              }else{
+                this.showError(data.message);
+              }
             }
           },
           error: (e) => {
@@ -127,7 +131,11 @@ export class EmployeeFormComponent extends FormTemplate implements OnInit {
         .subscribe({
           next: (data: any) => {
             if (data !== undefined) {
-              this.showSuccess(data.message);
+              if(data.isSuccess){
+                this.showSuccess(data.message);
+              }else{
+                this.showError(data.message);
+              }
             }
           },
           error: (e) => {

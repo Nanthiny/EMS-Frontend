@@ -77,7 +77,11 @@ export class DepartmentFormComponent
         .subscribe({
           next: (data: any) => {
             if (data !== undefined) {
-              this.showSuccess(data.message);
+              if(data.isSuccess){
+                this.showSuccess(data.message);
+              }else{
+                this.showError(data.message);
+              }
             }
           },
           error: (e) => {
@@ -94,7 +98,12 @@ export class DepartmentFormComponent
         .subscribe({
           next: (data: any) => {
             if (data !== undefined) {
-              this.showSuccess(data.message);
+
+              if(data.isSuccess){
+                this.showSuccess(data.message);
+              }else{
+                this.showError(data.message);
+              }
             }
           },
           error: (e) => {
