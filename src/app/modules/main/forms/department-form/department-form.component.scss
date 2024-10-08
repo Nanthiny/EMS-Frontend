@@ -1,0 +1,17 @@
+.dept-form{
+  margin:2rem 2rem 0 2rem;
+  font-size: 1rem;
+  ::ng-deep .form-control{
+      width: 50%;
+      margin-bottom: 1rem;
+      margin-left: 3rem;
+  }
+  button{
+    margin-left: 1rem;
+  }
+  .btns{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,18 @@
+ .modal{
+top:0;
+font-size: 1rem;
+}
+.modal-header{
+  p{
+    font-weight: bold;
+  }
+ }
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  & button{
+    width: 10rem;
+  }
+
+}

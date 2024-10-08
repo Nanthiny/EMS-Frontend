@@ -1,0 +1,29 @@
+<div class="form-style">
+  <div class="add"> <a class="btn btn-secondary" routerLink="/add-department-form">
+      Add New Department
+    </a></div>
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <td>Department Name</td>
+        <td class="actions">Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of departments">
+        <td>{{item.departmentName}}</td>
+        <td class="actions">
+          <div>
+            <a class="btn" [routerLink]="['/edit-department-form/',item.departmentId]">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+            <a class="btn" (click)="deleteData(item.departmentId)">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-popup  [isOpen]="isModalOpen" (close)="closeModal()" (confirm)="onConfirm()"></app-popup>

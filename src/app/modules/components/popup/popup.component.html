@@ -1,0 +1,15 @@
+<div class="modal fade"  data-bs-backdrop="static" [ngClass]="{'show': isOpen}" [style.display]="isOpen ? 'block' : 'none'" tabindex="-1" role="dialog" aria-hidden="true" (click)="onClose()">
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title">Are you sure to delete?</p>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onClose()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="onConfirm()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

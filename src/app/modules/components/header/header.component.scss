@@ -1,0 +1,33 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+.sidenav {
+
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #e7e1e1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  margin-top: 1rem;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #3f3c3c;
+}
+h4{
+  margin-left: 1rem;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

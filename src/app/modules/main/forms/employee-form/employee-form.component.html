@@ -1,0 +1,46 @@
+<div class="create-form">
+  <h4>{{title}}</h4>
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Employee Name</label>
+          <input  class="col-sm-10 form-control" placeholder="Enter Employee Name" formControlName="employeeName" [ngClass]="evaluateInputWarning('employeeName')">
+
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Employee Number</label>
+            <input  class="col-sm-10 form-control" placeholder="Enter Employee Number" formControlName="employeeNumber" [ngClass]="evaluateInputWarning('employeeNumber')">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email Address</label>
+            <input  class="col-sm-10 form-control" placeholder="Enter Email Address" formControlName="emailAddress" [ngClass]="evaluateInputWarning('emailAddress')">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Phone Number</label>
+            <input  class="col-sm-10 form-control" placeholder="Enter Phone Number" formControlName="phone" [ngClass]="evaluateInputWarning('phone')">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Job Title</label>
+            <input  class="col-sm-10 form-control" placeholder="Enter Job Title" formControlName="jobTitle" [ngClass]="evaluateInputWarning('jobTitle')">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Joined Date</label>
+            <input type="date" class="col-sm-10 form-control" placeholder="Select Date" formControlName="joinedDate" [ngClass]="evaluateInputWarning('joinedDate')">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Department</label>
+            <select class="col-sm-10 form-select" formControlName="departmentId" [ngClass]="evaluateInputWarning('departmentId')">
+              <option value="" disabled selected>---Select Department ---</option>
+              <option *ngFor="let dept of departments" [value]="dept.departmentId">{{dept.departmentName}}</option>
+            </select>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-8 btns">
+              <button type="submit" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+              <button type="submit" class="btn btn-primary" [disabled]="!valid">Submit</button>
+            </div>
+          </div>
+      </form>
+</div>
+
+
+

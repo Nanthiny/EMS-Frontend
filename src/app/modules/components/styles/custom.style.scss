@@ -1,0 +1,30 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+.form-style{
+    margin:1rem 2rem 0rem 2rem;
+    & .add{
+      display: flex;
+      justify-content: end;
+      margin-bottom: 1rem;
+   }
+    ::ng-deep .form-control,select{
+        width: 50%;
+        margin-bottom: 1rem;
+        margin-left: 3rem;
+    }
+    button{
+      margin-left: 1rem;
+      background-color: red;
+    }
+}
+
+.table{
+  font-size: 1rem;
+  .thead-light
+  {
+    font-weight: bold;
+  }
+  .actions{
+     text-align: center;
+  }
+}
+

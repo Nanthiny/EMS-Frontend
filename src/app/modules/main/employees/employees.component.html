@@ -1,0 +1,43 @@
+<div class="form-style">
+  <div class="add"> <a class="btn btn-secondary" routerLink="/add-employee-form">
+      Add New Employee
+    </a></div>
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <td>Employee Number</td>
+        <td>Employee Name</td>
+        <td>Email Address</td>
+        <td>Phone</td>
+        <td>Job Title</td>
+        <td>Department</td>
+        <td>Joined Date</td>
+
+        <td class="actions">Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of employees">
+        <td>{{item.employeeNumber}}</td>
+        <td>{{item.employeeName}}</td>
+        <td>{{item.emailAddress}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.jobTitle}}</td>
+        <td>{{item.departmentName}}</td>
+        <td>{{item.joinedDate | date:'YYYY-MM-dd'}}</td>
+        <td class="actions">
+          <div>
+            <a class="btn" [routerLink]="['/edit-employee-form/',item.employeeId]">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </a>
+            <a class="btn" (click)="deleteData(item.employeeId)">
+              <i class="fa-solid fa-trash"></i>
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-popup  [isOpen]="isModalOpen" (close)="closeModal()" (confirm)="onConfirm()"></app-popup>
